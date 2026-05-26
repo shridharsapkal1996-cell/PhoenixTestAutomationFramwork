@@ -8,11 +8,14 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import com.api.constant.Role;
 import com.api.pojo.UserCredentials;
 import com.api.utils.ConfigManagerOLD;
+import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
 
 import io.restassured.http.ContentType;
+import io.restassured.http.Header;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class loginAPI {
@@ -20,6 +23,9 @@ public class loginAPI {
 	
 	@Test
 	public void apiTest() throws IOException {
+		
+
+		Header authHeader = new Header("Authorization", AuthTokenProvider.getToken(Role.FD));
 		//Rest assured code
 		
 		//read the property va;lue that is to be going to be passed from terminal 

@@ -1,9 +1,15 @@
  package com.api.tests;
 import static org.hamcrest.Matchers.*;
 
+import java.io.IOException;
+
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
+import static com.api.constant.Role.*;
+
+import com.api.constant.Role;
+import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
 
 import static io.restassured.RestAssured.*;
@@ -15,22 +21,26 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 public class LoginDetailsApiTest {
 	
 	@Test
-	public void LoginDetailsAPItest() {
+ public void LoginDetailsAPItest() throws IOException {
 		
-		Header authHeader=new Header("Authorization","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZmlyc3RfbmFtZSI6ImZkIiwibGFzdF9uYW1lIjoiZmQiLCJsb2dpbl9pZCI6ImlhbWZkIiwibW9iaWxlX251bWJlciI6Ijg4OTk3NzY2NTUiLCJlbWFpbF9pZCI6Im1hcmtAZ21haWwuY29tIiwicGFzc3dvcmQiOiI1ZjRkY2MzYjVhYTc2NWQ2MWQ4MzI3ZGViODgyY2Y5OSIsInJlc2V0X3Bhc3N3b3JkX2RhdGUiOm51bGwsImxvY2tfc3RhdHVzIjowLCJpc19hY3RpdmUiOjEsIm1zdF9yb2xlX2lkIjo1LCJtc3Rfc2VydmljZV9sb2NhdGlvbl9pZCI6MSwiY3JlYXRlZF9hdCI6IjIwMjEtMTEtMDNUMDg6MDY6MjMuMDAwWiIsIm1vZGlmaWVkX2F0IjoiMjAyMS0xMS0wM1QwODowNjoyMy4wMDBaIiwicm9sZV9uYW1lIjoiRnJvbnREZXNrIiwic2VydmljZV9sb2NhdGlvbiI6IlNlcnZpY2UgQ2VudGVyIEEiLCJpYXQiOjE3Nzc2MzY3OTZ9.LCExKDbAK7vF_82kvbI5X0NaFvMgR1UfdGYTBzmKpkg");
 		
-	    given()
+		
+		Header authHeader = new Header("Authorization", AuthTokenProvider.getToken(Role.FD));
+
+		
+				
+		  given()
 	     .baseUri(ConfigManager.getProperty("BASE_URI"))
 	     .and()
 	     .header(authHeader)
 	     .and()
-	     .accept(ContentType.JSON)
+	     .accept(ContentType.JSON) 
 	     .log().uri()
 	     .log().method()
 	     .log().body()
 	     .log().headers()
 
-	     
+	      
 	     .when()
 	     .get("userdetails")
 	     
@@ -43,11 +53,9 @@ public class LoginDetailsApiTest {
 	     
 	     
 		
-		
-	
-	
-		
-		
 	}
 
+	
+
+	
 }
