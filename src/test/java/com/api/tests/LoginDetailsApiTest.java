@@ -11,6 +11,7 @@ import static com.api.constant.Role.*;
 import com.api.constant.Role;
 import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
+import com.api.utils.SpecUtils;
 
 import static io.restassured.RestAssured.*;
 
@@ -30,15 +31,7 @@ public class LoginDetailsApiTest {
 		
 				
 		  given()
-	     .baseUri(ConfigManager.getProperty("BASE_URI"))
-	     .and()
-	     .header(authHeader)
-	     .and()
-	     .accept(ContentType.JSON) 
-	     .log().uri()
-	     .log().method()
-	     .log().body()
-	     .log().headers()
+	      .spec(SpecUtils.requestSpecWithAuth(FD))
 
 	      
 	     .when()
@@ -46,7 +39,7 @@ public class LoginDetailsApiTest {
 	     
 	     .then()
 	     .log().all()
-	     .statusCode(200)
+	     .spec(SpecUtils.reponseSpec_ok())
 	     .time(lessThan(10000L))
 	     .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/userdetails-schema.json"));
 	    
