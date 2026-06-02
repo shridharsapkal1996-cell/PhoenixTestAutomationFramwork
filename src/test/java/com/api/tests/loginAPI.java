@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.api.constant.Role;
 import com.api.pojo.UserCredentials;
 import com.api.utils.ConfigManagerOLD;
+import com.api.utils.SpecUtils;
 import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
 
@@ -37,25 +38,17 @@ public class loginAPI {
 		 
 		//SetUp
 		given()
-          .baseUri(ConfigManager.getProperty("BASE_URI"))
-          .and()
-          .contentType(ContentType.JSON)
-          .and()
-          .body(userCredentials)
-          .log().uri()
-          .log().method()
-          .log().headers()
-          .log().body()
+		   .spec(SpecUtils.requestSpec(userCredentials))
+         
           
           //Ation will be happen in when 
-          
           .when()
             .post("login")
             
            
             //Validation will happen in Then
           .then()
-            .statusCode(200)
+             .spec(SpecUtils.reponseSpec_ok())
             .time(lessThan(10000L))
             .and()
             .body("message",equalTo("Success"))
