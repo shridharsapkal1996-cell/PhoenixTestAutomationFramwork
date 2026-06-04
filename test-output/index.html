@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\admin\AppData\Local\Temp\testng-eclipse-907237866\testng-customsuite.xml</span>
+                    <span>C:\Users\admin\AppData\Local\Temp\testng-eclipse--287081693\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,36 +129,25 @@
                   <a name="createJobAPITest">
                   </a> <!-- createJobAPITest -->
                   <span class="method-name">createJobAPITest</span>
-                  <div class="stack-trace">com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.api.pojo.CreateJobPayload and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
-	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
-	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1359)
-	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:415)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:52)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:29)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:503)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:342)
-	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3437)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy:53)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy)
-	at io.restassured.mapper.ObjectMapper$serialize.call(Unknown Source)
-	at io.restassured.internal.mapping.ObjectMapping.serializeWithJackson2(ObjectMapping.groovy:217)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:153)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:102)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:154)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:770)
-	at io.restassured.builder.RequestSpecBuilder.setBody(RequestSpecBuilder.java:119)
-	at com.api.utils.SpecUtils.requestSpecWithAuth(SpecUtils.java:74)
-	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:35)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:40)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -194,7 +183,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\admin\AppData\Local\Temp\testng-eclipse-907237866\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\admin\AppData\Local\Temp\testng-eclipse--287081693\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -247,12 +236,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createJobAPITest')
 data.setCell(0, 2, 'com.api.tests.CreateJobAPITest')
-data.setCell(0, 3, 3083);
+data.setCell(0, 3, 2701);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->

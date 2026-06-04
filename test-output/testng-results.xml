@@ -2,47 +2,38 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-04T10:36:27 IST" name="Default suite" finished-at="2026-06-04T10:36:31 IST" duration-ms="3217">
+  <suite started-at="2026-06-04T22:51:26 IST" name="Default suite" finished-at="2026-06-04T22:51:28 IST" duration-ms="2753">
     <groups>
     </groups>
-    <test started-at="2026-06-04T10:36:27 IST" name="Default test" finished-at="2026-06-04T10:36:31 IST" duration-ms="3217">
+    <test started-at="2026-06-04T22:51:26 IST" name="Default test" finished-at="2026-06-04T22:51:28 IST" duration-ms="2753">
       <class name="com.api.tests.CreateJobAPITest">
-        <test-method signature="createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@5bda8e08]" started-at="2026-06-04T10:36:27 IST" name="createJobAPITest" finished-at="2026-06-04T10:36:31 IST" duration-ms="3083" status="FAIL">
-          <exception class="com.fasterxml.jackson.databind.exc.InvalidDefinitionException">
+        <test-method signature="createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@3b0090a4]" started-at="2026-06-04T22:51:26 IST" name="createJobAPITest" finished-at="2026-06-04T22:51:28 IST" duration-ms="2701" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[No serializer found for class com.api.pojo.CreateJobPayload and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)]]>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <500>.
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.api.pojo.CreateJobPayload and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
-at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
-at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1359)
-at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:415)
-at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:52)
-at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:29)
-at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:503)
-at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:342)
-at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3437)
-at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <500>.
+
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
-at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy:53)
-at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy)
-at io.restassured.mapper.ObjectMapper$serialize.call(Unknown Source)
-at io.restassured.internal.mapping.ObjectMapping.serializeWithJackson2(ObjectMapping.groovy:217)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
-at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:153)
-at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:102)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:154)
-at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:770)
-at io.restassured.builder.RequestSpecBuilder.setBody(RequestSpecBuilder.java:119)
-at com.api.utils.SpecUtils.requestSpecWithAuth(SpecUtils.java:74)
-at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:35)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:40)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -71,7 +62,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- com.fasterxml.jackson.databind.exc.InvalidDefinitionException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createJobAPITest -->

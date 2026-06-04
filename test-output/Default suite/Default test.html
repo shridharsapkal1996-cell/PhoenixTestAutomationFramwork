@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 04 10:36:27 IST 2026</td>
+<td>Started on:</td><td>Thu Jun 04 22:51:26 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3217 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2753 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,36 +77,25 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.api.tests.CreateJobAPITest.createJobAPITest()'><b>createJobAPITest</b><br>Test class: com.api.tests.CreateJobAPITest</td>
-<td><div><pre>com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.api.pojo.CreateJobPayload and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
-	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
-	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1359)
-	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:415)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:52)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:29)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:503)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:342)
-	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3437)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy:53)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy)
-	at io.restassured.mapper.ObjectMapper$serialize.call(Unknown Source)
-	at io.restassured.internal.mapping.ObjectMapping.serializeWithJackson2(ObjectMapping.groovy:217)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:153)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:102)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:154)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:770)
-	at io.restassured.builder.RequestSpecBuilder.setBody(RequestSpecBuilder.java:119)
-	at com.api.utils.SpecUtils.requestSpecWithAuth(SpecUtils.java:74)
-	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:35)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:40)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -133,37 +122,26 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1354314579", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1354314579'><pre>com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.api.pojo.CreateJobPayload and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS)
-	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
-	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1359)
-	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:415)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:52)
-	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:29)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:503)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:342)
-	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:3437)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
+</pre></div><a href='#' onClick='toggleBox("stack-trace162821120", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace162821120'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at com.fasterxml.jackson.databind.ObjectMapper$writeValue.call(Unknown Source)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy:53)
-	at io.restassured.internal.mapping.Jackson2Mapper.serialize(Jackson2Mapper.groovy)
-	at io.restassured.mapper.ObjectMapper$serialize.call(Unknown Source)
-	at io.restassured.internal.mapping.ObjectMapping.serializeWithJackson2(ObjectMapping.groovy:217)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:153)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:102)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
-	at io.restassured.internal.mapping.ObjectMapping.serialize(ObjectMapping.groovy:154)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at io.restassured.internal.mapping.ObjectMapping$serialize.call(Unknown Source)
-	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:770)
-	at io.restassured.builder.RequestSpecBuilder.setBody(RequestSpecBuilder.java:119)
-	at com.api.utils.SpecUtils.requestSpecWithAuth(SpecUtils.java:74)
-	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:35)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
+	at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:40)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -191,8 +169,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>3</td>
-<td>com.api.tests.CreateJobAPITest@5bda8e08</td></tr>
+<td>2</td>
+<td>com.api.tests.CreateJobAPITest@3b0090a4</td></tr>
 </table><p>
 </body>
 </html>
