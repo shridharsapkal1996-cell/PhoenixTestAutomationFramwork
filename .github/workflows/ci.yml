@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  schedule: #Set the CRON for Midnight IST ----->convert in UTC 
+  schedule: #Set the CRON for Midnight IST ----->convert in UTC time 
     - cron: "30 18 * * *"
     - cron: "30 15 * * *"
   workflow_dispatch:
