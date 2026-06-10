@@ -1,7 +1,7 @@
 package com.api.request.model;
 
 public record UserCredentials( 
-//Created by shridhar
+//Created by shridhar Sapkal
 		String username, String password
 
 )
