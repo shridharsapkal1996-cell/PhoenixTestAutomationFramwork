@@ -9,9 +9,7 @@
       <class name="com.api.tests.loginAPI"/>
       <class name="com.api.tests.LoginDetailsApiTest"/>
       <class name="com.api.tests.MasterApiTest"/>
-     
-     
-     
+      <class name="com.api.tests.CreateJobAPITest"/>
      
      
     </classes>
