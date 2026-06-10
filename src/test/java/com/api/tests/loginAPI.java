@@ -10,7 +10,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.constant.Role;
+
 import com.api.request.model.UserCredentials;
+
+
+
+import com.api.utils.SpecUtils;
+
 import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
 
@@ -32,6 +38,7 @@ public class loginAPI {
 	public void apiTest() throws IOException {
 
 		Header authHeader = new Header("Authorization", AuthTokenProvider.getToken(Role.FD));
+
 		// Rest assured code
 
 		// read the property va;lue that is to be going to be passed from terminal
@@ -52,6 +59,35 @@ public class loginAPI {
 				.body("message", equalTo("Success"))
 				.and()
 				.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
+
+
+		//Rest assured code
+		
+		//read the property va;lue that is to be going to be passed from terminal 
+		System.out.println("-------------->>>>"+System.getProperty("env"));
+		  
+		UserCredentials userCredentials=new UserCredentials("iamfd","password");
+		
+	  
+		 
+		
+		given()
+		   .spec(SpecUtils.requestSpec(userCredentials))
+         
+          
+
+          .when()
+            .post("login")
+            
+           
+          .then()
+             .spec(SpecUtils.reponseSpec_ok())
+            .time(lessThan(10000L))
+            .and()
+            .body("message",equalTo("Success"))
+		    .and()
+		    .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
+		    
 
 	}
 

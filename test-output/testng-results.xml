@@ -2,51 +2,46 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-10T10:36:27 IST" name="Default suite" finished-at="2026-06-10T10:36:31 IST" duration-ms="4039">
+  <suite started-at="2026-06-10T13:04:29 IST" name="Default suite" finished-at="2026-06-10T13:04:33 IST" duration-ms="3868">
     <groups>
       <group name="regression">
-        <method signature="CreateJobAPITest.createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@6ed3ccb2]" name="createJobAPITest" class="com.api.tests.CreateJobAPITest"/>
+        <method signature="loginAPI.apiTest()[pri:0, instance:com.api.tests.loginAPI@40005471]" name="apiTest" class="com.api.tests.loginAPI"/>
       </group> <!-- regression -->
       <group name="smoke">
-        <method signature="CreateJobAPITest.createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@6ed3ccb2]" name="createJobAPITest" class="com.api.tests.CreateJobAPITest"/>
+        <method signature="loginAPI.apiTest()[pri:0, instance:com.api.tests.loginAPI@40005471]" name="apiTest" class="com.api.tests.loginAPI"/>
       </group> <!-- smoke -->
       <group name="api">
-        <method signature="CreateJobAPITest.createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@6ed3ccb2]" name="createJobAPITest" class="com.api.tests.CreateJobAPITest"/>
+        <method signature="loginAPI.apiTest()[pri:0, instance:com.api.tests.loginAPI@40005471]" name="apiTest" class="com.api.tests.loginAPI"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2026-06-10T10:36:27 IST" name="Default test" finished-at="2026-06-10T10:36:31 IST" duration-ms="4039">
-      <class name="com.api.tests.CreateJobAPITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.tests.CreateJobAPITest@6ed3ccb2]" started-at="2026-06-10T10:36:27 IST" name="setup" description="Creating createjob api request payload" finished-at="2026-06-10T10:36:27 IST" duration-ms="14" status="PASS">
+    <test started-at="2026-06-10T13:04:29 IST" name="Default test" finished-at="2026-06-10T13:04:33 IST" duration-ms="3868">
+      <class name="com.api.tests.loginAPI">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.tests.loginAPI@40005471]" started-at="2026-06-10T13:04:29 IST" name="setup" description="create the Payload for the login API" finished-at="2026-06-10T13:04:29 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createJobAPITest()[pri:0, instance:com.api.tests.CreateJobAPITest@6ed3ccb2]" started-at="2026-06-10T10:36:27 IST" name="createJobAPITest" description="Verifying if create job api is able to create Inwarrenty job" finished-at="2026-06-10T10:36:31 IST" duration-ms="3941" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="apiTest()[pri:0, instance:com.api.tests.loginAPI@40005471]" started-at="2026-06-10T13:04:29 IST" name="apiTest" description="Verify if the login api is worrking for user iamfd" finished-at="2026-06-10T13:04:33 IST" duration-ms="3749" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[1 expectation failed.
-Expected status code <200> but was <500>.
-]]>
+              <![CDATA[object cannot be null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <200> but was <500>.
-
+              <![CDATA[java.lang.IllegalArgumentException: object cannot be null
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
 at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
 at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
-at io.restassured.internal.ResponseSpecificationImpl.validate(ResponseSpecificationImpl.groovy:101)
-at io.restassured.internal.ValidatableResponseOptionsImpl.spec(ValidatableResponseOptionsImpl.java:288)
-at com.api.tests.CreateJobAPITest.createJobAPITest(CreateJobAPITest.java:71)
+at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+at com.api.tests.loginAPI.apiTest(loginAPI.java:49)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -75,11 +70,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createJobAPITest -->
-      </class> <!-- com.api.tests.CreateJobAPITest -->
+        </test-method> <!-- apiTest -->
+      </class> <!-- com.api.tests.loginAPI -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
