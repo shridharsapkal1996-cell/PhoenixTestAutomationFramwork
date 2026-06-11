@@ -10,15 +10,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.api.constant.Role;
-
 import com.api.request.model.UserCredentials;
-
-
-import com.api.utils.ConfigManagerOLD;
-import com.api.utils.SpecUtils;
-
 import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
+import com.api.utils.SpecUtils;
 
 import io.restassured.http.ContentType;
 import io.restassured.http.Header;
@@ -26,13 +21,13 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class loginAPI {
 
-	private UserCredentials userCredentials;
+	  private UserCredentials userCredentials;
 
-	@BeforeMethod(description = "create the Payload for the login API")
-	public void setup() {
-		UserCredentials userCredentials = new UserCredentials("iamfd", "password");
-
-	}
+	    @BeforeMethod(description = "create the Payload for the login API")
+	    public void setup() {
+	        // assign to the class field, not a local variable
+	        userCredentials = new UserCredentials("iamfd", "password");
+	    }
 
 	@Test(description = "Verify if the login api is worrking for user iamfd", groups = { "api", "regression", "smoke" })
 	public void apiTest() throws IOException {
