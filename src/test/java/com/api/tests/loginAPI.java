@@ -14,7 +14,7 @@ import com.api.constant.Role;
 import com.api.request.model.UserCredentials;
 
 
-
+import com.api.utils.ConfigManagerOLD;
 import com.api.utils.SpecUtils;
 
 import com.api.utils.AuthTokenProvider;
@@ -70,16 +70,17 @@ public class loginAPI {
 		
 	  
 		 
-		
+		//SetUp
 		given()
 		   .spec(SpecUtils.requestSpec(userCredentials))
          
           
-
+          //Ation will be happen in when 
           .when()
             .post("login")
             
            
+            //Validation will happen in Then
           .then()
              .spec(SpecUtils.reponseSpec_ok())
             .time(lessThan(10000L))
