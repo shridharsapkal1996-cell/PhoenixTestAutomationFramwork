@@ -1,39 +1,32 @@
  package com.api.tests;
-import static org.hamcrest.Matchers.*;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.lessThan;
 
 import java.io.IOException;
 
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
-import static com.api.constant.Role.*;
-
-import com.api.constant.Role;z
-import com.api.utils.AuthTokenProvider;
-import com.api.utils.ConfigManager;
+import com.api.constant.Role;
 import com.api.utils.SpecUtils;
 
-import static io.restassured.RestAssured.*;
-
-import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class LoginDetailsApiTest {
 	
-	@Test
+	@Test(description="Verify if the UserDetails API response is shown correctly",groups= {"api","smoke","regression"})
  public void LoginDetailsAPItest() throws IOException {
 		
 		
 		
-		Header authHeader = new Header("Authorization", AuthTokenProvider.getToken(Role.FD));
+	
 
 		
 				
 		  given()
-	      .spec(SpecUtils.requestSpecWithAuth(FD))
+	      .spec(SpecUtils.requestSpecWithAuth(Role.FD))
 
-	      
+	        
 	     .when()
 	     .get("userdetails")
 	     
