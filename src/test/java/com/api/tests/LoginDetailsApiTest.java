@@ -1,5 +1,5 @@
  package com.api.tests;
-import static com.api.constant.Role.FD;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.lessThan;
 
@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import com.api.constant.Role;
 import com.api.utils.SpecUtils;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -23,7 +24,7 @@ public class LoginDetailsApiTest {
 		
 				
 		  given()
-	      .spec(SpecUtils.requestSpecWithAuth(FD))
+	      .spec(SpecUtils.requestSpecWithAuth(Role.FD))
 
 	        
 	     .when()
