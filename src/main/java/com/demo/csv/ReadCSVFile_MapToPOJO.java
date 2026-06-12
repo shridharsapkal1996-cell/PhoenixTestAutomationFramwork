@@ -6,9 +6,11 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 import com.opencsv.CSVReader;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.exceptions.CsvException;
 
-public class ReadCSVFile {
+public class ReadCSVFile_MapToPOJO {
 
 	public static void main(String[] args) throws IOException, CsvException {
 		// Code to read the CSV file in java !!! [Important interview questions]
@@ -16,23 +18,20 @@ public class ReadCSVFile {
 		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("testData/LoginCreds.csv");
 		InputStreamReader isr = new InputStreamReader(is);
 
-//		File csvFile = new File(
-//				"C:\\Users\\admin\\eclipse-workspace\\PhoenixTestAutomationFramework\\src\\main\\resources\\testData\\LoginCreds.csv");
-//
-//		FileReader fr = new FileReader(csvFile);
-		
 
 		CSVReader csvReader = new CSVReader(isr); // CSVReader Constructor //Require a reader !!
+		
+		//Write thge code to map CSV to POJO
+		//Its convered csv to object 
+		CsvToBean<UserPOJO> csvToBean=new CsvToBeanBuilder(csvReader)
+				.withType(UserPOJO.class)
+				.withIgnoreEmptyLine(true) 
+				.build();  
+		
+		
+		List<UserPOJO> userList=csvToBean.parse();
+		System.out.println(userList);
 
-		List<String[]> dataList = csvReader.readAll();
-
-		for (String[] dataArray : dataList) {
-  
-			System.out.println(dataArray[0]); // First col data
-			System.out.println(dataArray[1]); // Second col data
-			// System.out.println(dataArray[2]);
-
-		}
-	}
+			}
 
 }
