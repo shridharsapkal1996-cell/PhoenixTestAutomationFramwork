@@ -1,40 +1,45 @@
 package com.demo.csv;
 
+
 import com.opencsv.bean.CsvBindByName;
 
-public class UserPOJO {
+public class UserBean {
 
-    @CsvBindByName(column = "username")
-    private String x;
+	@CsvBindByName(column = "username")
+	private String username;
 
-    @CsvBindByName(column = "password")
-    private String y;
+	@CsvBindByName(column = "password")
+	private String password;
 
-    private String username;
-    private String password;
-
-    public UserPOJO() {
+	
+	public UserBean() {
     }
 
-    public UserPOJO(String username, String password) {
+	public UserBean(String username, String password) {
         super();
-        this.x = username;
-        this.y = password;
+        this.username = username;
+        this.password = password;
     }
 
-    public String getUsername() {
-        return x;
-    }
+	public String getusername() {
+		return username;
+	}
 
-    public void setUsername(String username) {
-        this.x = username;
-    }
+	public void setusername(String username) {
+		this.username = username;
+	}
 
-    public String getPassword() {
-        return y;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.y = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "UserBean [username=" + username + ", password=" + password + "]";
+	}
+	
 }
