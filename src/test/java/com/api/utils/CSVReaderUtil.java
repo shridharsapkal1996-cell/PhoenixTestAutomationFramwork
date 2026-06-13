@@ -3,6 +3,7 @@ package com.api.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 import java.util.List;
 
 import com.dataprovider.api.bean.UserBean;
@@ -28,7 +29,7 @@ public class CSVReaderUtil {
 
 	}
 
-	public static void LocalCSV(String pathOfCSVFile) throws IOException, CsvException {
+	public static Iterator<UserBean> LoadCSV(String pathOfCSVFile) throws IOException, CsvException {
 		// Code to read the CSV file in java !!! [Important interview questions]
 
 		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("testData/LoginCreds.csv");
@@ -42,9 +43,12 @@ public class CSVReaderUtil {
 				.withIgnoreEmptyLine(true)
 				.build();
 
-		List<UserBean> userList = csvToBean.parse();
-		System.out.println(userList);
+		List<UserBean> userList = csvToBean.parse(); 
+		return userList.iterator();
+		
 
 	}
+
+	
 
 }
