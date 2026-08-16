@@ -1,16 +1,13 @@
 package com.api.utils;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
 
-import com.dataprovider.api.bean.UserBean;
 import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.exceptions.CsvException;
 
 public class CSVReaderUtil {
 
@@ -29,26 +26,27 @@ public class CSVReaderUtil {
 
 	}
 
-	public static Iterator<UserBean> LoadCSV(String pathOfCSVFile) throws IOException, CsvException {
+	public static <T> Iterator<T> loadCSV(String pathOfCSVFile, Class<T> bean) {
 		// Code to read the CSV file in java !!! [Important interview questions]
 
-		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("testData/LoginCreds.csv");
+		InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream(pathOfCSVFile);
 		InputStreamReader isr = new InputStreamReader(is);
-
-		CSVReader csvReader = new CSVReader(isr); // CSVReader Constructor //Require a reader !!
+		CSVReader csvReader=new CSVReader(isr);
+    
+		
 
 	
-		CsvToBean<UserBean> csvToBean = new CsvToBeanBuilder(csvReader)
-				.withType(UserBean.class)
+		CsvToBean<T> csvToBean = new CsvToBeanBuilder(csvReader)
+				.withType(bean)
 				.withIgnoreEmptyLine(true)
 				.build();
 
-		List<UserBean> userList = csvToBean.parse(); 
-		return userList.iterator();
+		List<T> list = csvToBean.parse(); 
+		return list.iterator();
 		
 
 	}
 
-	
-
 }
+
+
