@@ -1,6 +1,7 @@
 package com.api.request.model;
 
 import java.util.Arrays;
+import java.util.List;
 
 public record CreateJobPayload(
     int mst_service_location_id,
@@ -12,8 +13,15 @@ public record CreateJobPayload(
     CustomerAddress customer_address,
     CustomerProduct customer_product,
     Problems[] problems
-) {
-    @Override
+) 
+
+
+
+
+{
+   
+
+	@Override
     public String toString() {
         return "CreateJobPayload{" +
                 "mst_service_location_id=" + mst_service_location_id +
@@ -26,4 +34,6 @@ public record CreateJobPayload(
                 ", problems=" + Arrays.toString(problems) +
                 '}';
     }
+    
+    
 }
