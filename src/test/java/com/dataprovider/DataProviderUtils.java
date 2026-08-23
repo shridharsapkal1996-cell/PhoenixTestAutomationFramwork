@@ -10,17 +10,17 @@ import org.testng.annotations.DataProvider;
 import com.api.request.model.CreateJobPayload;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
+import com.api.utils.FakerDataGenerator;
 import com.dataprovider.api.bean.CreateJobBean;
 import com.dataprovider.api.bean.UserBean;
 import com.opencsv.exceptions.CsvException;
 
 public class DataProviderUtils {
 
-	@DataProvider(name="CreateJobAPIDataProvider",parallel=true)
+	@DataProvider(name = "CreateJobAPIDataProvider", parallel = true)
 	public static Iterator<UserBean> loginAPIDataProvider() throws IOException, CsvException {
-		return CSVReaderUtil.loadCSV("testData/LoginCreds.csv",UserBean.class);
-	
-		
+		return CSVReaderUtil.loadCSV("testData/LoginCreds.csv", UserBean.class);
+
 	}
 
 	// Data provider needs to return somthing
@@ -28,22 +28,35 @@ public class DataProviderUtils {
 	// [] []
 	// Iterator<>
 
-	@DataProvider(name="CreateJobAPIDataProvider",parallel=true)
+	@DataProvider(name = "CreateJobAPIDataProvider", parallel = true)
 	public static Iterator<CreateJobPayload> createJobDataProvider() {
-		
-		Iterator<CreateJobBean> createJobBeanIterator=CSVReaderUtil.loadCSV("testData/CreateJobData.csv",CreateJobBean.class);
-		
-		
-		List<CreateJobPayload> payloadlist=new ArrayList<CreateJobPayload>();
+
+		Iterator<CreateJobBean> createJobBeanIterator = CSVReaderUtil.loadCSV("testData/CreateJobData.csv",
+				CreateJobBean.class);
+
+		List<CreateJobPayload> payloadlist = new ArrayList<CreateJobPayload>();
 		CreateJobBean tempBean;
 		CreateJobPayload tempPayload;
-		
-            while(createJobBeanIterator.hasNext()) {
-			tempBean=createJobBeanIterator.next();
-			tempPayload=CreateJobBeanMapper.mapper(tempBean);
-		     payloadlist.add(tempPayload);
-	
-}
-             return payloadlist.iterator();
-}
+
+		while (createJobBeanIterator.hasNext()) {
+			tempBean = createJobBeanIterator.next();
+			tempPayload = CreateJobBeanMapper.mapper(tempBean);
+			payloadlist.add(tempPayload);
+
+		}
+		return payloadlist.iterator();
+	}
+
+	@DataProvider(name = "CreateJobAPIFakerProvider", parallel = true)
+	public static Iterator<CreateJobPayload> createJobFakeDataProvider() {
+
+		String fakerCount = System.getProperty("fakerCount", "5");
+
+		int fakerCountInt = Integer.parseInt(fakerCount);
+
+		Iterator<CreateJobPayload> payloadIterator = FakerDataGenerator.generateFakeCreateJobData(5);
+
+		return payloadIterator;
+
+	}
 }
