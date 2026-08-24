@@ -5,9 +5,12 @@
 
 	<test name="Inwarrenty Flow- Data Driven Tests">
 		<classes>
-
-			<class name="com.api.tests.datadriven.CreateJobAPIDataDrivenTest/" />
 			<class name="com.api.tests.datadriven.loginAPIDataDrivenTest/" />
+			<class name="com.api.tests.datadriven.CreateJobAPIDataDrivenTest/" />
+			<class name="com.api.tests.datadriven.CreateJobAPIJSONDataDrivenTest/" />
+			
+			
+		
 
 
 		</classes>

@@ -1,0 +1,236 @@
+[33mcommit e077859fa67f76ee82ab82d75a6ae2b8ed37fdaf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 0998fbf c35317a
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sun Aug 23 09:55:33 2026 +0530
+
+    Merge pull request #19 from shridharsapkal1996-cell/feature/faker_practice
+    
+    Data driven xml changed committed
+
+[33mcommit c35317a135f8850a5393fb2c77105189014cea30[m[33m ([m[1;31morigin/feature/faker_practice[m[33m, [m[1;32mfeature/faker_practice[m[33m)[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sun Aug 23 09:54:23 2026 +0530
+
+    Create the different xml file and raised PR
+
+[33mcommit 0998fbf4ea0012b1d5083145a6e7152a8eebb45d[m
+Merge: 368d8bb dee7bae
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Aug 22 10:54:13 2026 +0530
+
+    Merge pull request #18 from shridharsapkal1996-cell/feature/faker_practice
+    
+    Updated Issue Changes
+
+[33mcommit dee7baeb1e5c10f710f77d5659ffa08d06b138ab[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Aug 22 10:04:04 2026 +0530
+
+    Updated Issue Changes
+
+[33mcommit 368d8bb9a6e57049195d19969921cfe76890cb22[m
+Merge: 88dfe62 63de1ad
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Aug 20 22:50:02 2026 +0530
+
+    Merge pull request #17 from shridharsapkal1996-cell/feature/faker_practice
+    
+    Commit the fakerFile changes
+
+[33mcommit 63de1addd639b1af5f79710533ba9b5136e0bac2[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Aug 20 22:47:18 2026 +0530
+
+    Commit the fakerFile changes
+
+[33mcommit 88dfe62e6629bfd1b85bb0b16d605352c08f5b1a[m
+Merge: 502ad2c 8da1607
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Aug 20 22:41:32 2026 +0530
+
+    Merge pull request #16 from shridharsapkal1996-cell/feature/faker_practice
+    
+    Created FakerDataGeneratorUtil and also added
+
+[33mcommit 8da1607f8774bab31a0e1a76c61f9d6531360db8[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Aug 20 22:39:35 2026 +0530
+
+    Created FakerDataGeneratorUtil and also added
+    CreateJobAPIFakerDataDrivenTest into datadriven package
+
+[33mcommit 502ad2c7ead945323a0cccc4769df2f4445546ce[m
+Merge: 07b3516 a50a450
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sun Aug 16 15:44:14 2026 +0530
+
+    Merge pull request #15 from shridharsapkal1996-cell/feature/faker_practice
+    
+    Created Faker demo for practice
+
+[33mcommit a50a45053a0e28c5a8d2d7d70509912da03b1dce[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sun Aug 16 15:43:17 2026 +0530
+
+    Created Faker demo for practice
+
+[33mcommit 07b3516a2c45a35060bd43b7d9f98a1af61ed7a9[m
+Merge: 14f0f20 858369f
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 18:05:17 2026 +0530
+
+    Merge pull request #14 from shridharsapkal1996-cell/feature/r8-data-driven-csv
+    
+    Introduced loginAPI Data Driven test for POC open CSV Library
+
+[33mcommit 858369fe895d84f69b0aeb55c973808640ae55da[m[33m ([m[1;31morigin/feature/r8-data-driven-csv[m[33m, [m[1;32mfeature/r8-data-driven-csv[m[33m)[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 18:02:43 2026 +0530
+
+    Introduced loginAPI Data Driven test for POC open CSV Library
+    
+    Introduced the dataprovider util to pass the test data to loginapitest
+    and the test will be executed
+
+[33mcommit 14f0f2099246f76212dd326eddf5010df81e1070[m
+Merge: edd6ac8 ff20113
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 00:08:34 2026 +0530
+
+    Merge pull request #13 from shridharsapkal1996-cell/feature/r8-data-driven-csv
+    
+    Feature/r8 data driven csv
+
+[33mcommit ff201133248d6fe6c7b9968b07d8aa476c6d58a2[m
+Merge: 8adcbe0 edd6ac8
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 00:07:47 2026 +0530
+
+    Merge branch 'main' into feature/r8-data-driven-csv
+
+[33mcommit 8adcbe02595a203fc8989860375253e42bfc9894[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 00:06:34 2026 +0530
+
+    updated and resolved target
+
+[33mcommit edd6ac8a44b258f621b9331e3da831ad2e0a5ca9[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Sat Jun 13 00:00:46 2026 +0530
+
+    target foolder
+
+[33mcommit f1ea44f5ef6cf3c5d8becc5b6cb92ad889d0c1b8[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 23:45:42 2026 +0530
+
+    Refractor the project structure.
+    CSVReaderUtil:load the CSV file and map to UserBean
+    
+    Userbean: Bean class for CSV mapping and will be used by DataProviders
+    
+    Moved the testData from src/main/resources to src/test/resources
+
+[33mcommit dbfc4eb25df214cfb8bc5318a444e4a605732e78[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 23:14:40 2026 +0530
+
+    This is realted the gitignore file changes
+
+[33mcommit bb7aad73f9e5df3ce3f840ef8416b3e2f8c2ac9d[m
+Merge: 1160f8c 34674e6
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 23:07:08 2026 +0530
+
+    Merge pull request #10 from shridharsapkal1996-cell/feature/r8-data-driven-csv
+    
+    Feature/r8 data driven csv
+
+[33mcommit 34674e6e5d361bca0ef2b8fe389fb050305e87f8[m[33m ([m[1;31morigin/r8-data-driven-csv-practice[m[33m, [m[1;32mr8-data-driven-csv-practice[m[33m)[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 23:05:53 2026 +0530
+
+    also updated the ReadCSVFile_MAPPOJO
+
+[33mcommit 6f0df962c9dc5eb1083b0c2208bd3bca4b939c97[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 23:03:04 2026 +0530
+
+    Created UserBean class and updated the CsvBindByname in class
+
+[33mcommit 1160f8cf1d1a01e70762cecabbe3dd6b558bcf18[m
+Merge: 99722e9 e68c8ab
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 21:58:46 2026 +0530
+
+    Merge pull request #9 from shridharsapkal1996-cell/feature/r8-data-driven-csv
+    
+    Practiced mapping to the CSV file to POJO
+
+[33mcommit e68c8ab02fcfb198abf2eec8813a3a9d2f2952c5[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 21:57:07 2026 +0530
+
+    Practiced mapping to the CSV file to POJO
+
+[33mcommit 99722e95d457ccd186b7d3242e6e0bb0aaab2800[m
+Merge: 6035b68 6553e58
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 12:26:20 2026 +0530
+
+    Merge branch 'main' of https://github.com/shridharsapkal1996-cell/PhoenixTestAutomationFramwork.git into main
+
+[33mcommit 6035b68568eb087c7093259050682f4242334652[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 12:23:33 2026 +0530
+
+    nothing
+
+[33mcommit 6553e58a10844be203371b909e11624ec440ba03[m
+Merge: f62373e c61a08f
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 12:20:23 2026 +0530
+
+    Merge pull request #8 from shridharsapkal1996-cell/feature/r8-data-driven-csv
+    
+    Practiced working with csv library
+
+[33mcommit c61a08fe85cd2211a2ab9dc278a799f88558c155[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Fri Jun 12 12:19:07 2026 +0530
+
+    Practiced working with csv library
+
+[33mcommit f62373e7d7b4bc9b4630ca621018229e28339c90[m
+Merge: 2889db3 6dd977d
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Jun 11 23:24:17 2026 +0530
+
+    Merge pull request #7 from shridharsapkal1996-cell/frature/r7-create-job-api
+    
+    updated login api
+
+[33mcommit 6dd977d1bc374c4afedb366b9f5d130d06651dbf[m[33m ([m[1;31morigin/frature/r7-create-job-api[m[33m, [m[1;32mfrature/r7-create-job-api[m[33m)[m
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Jun 11 23:23:30 2026 +0530
+
+    updated login api
+
+[33mcommit 2889db3dec2e5e6f348070b004c17467b673cdcc[m
+Merge: 00d3cd5 ce69e22
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Jun 11 23:08:08 2026 +0530
+
+    Merge pull request #6 from shridharsapkal1996-cell/frature/r7-create-job-api
+    
+    Frature/r7 create job api
+
+[33mcommit ce69e22b03e54ca41d1b99563000cd99bda86371[m
+Merge: 99f40d8 2501a25
+Author: Shridhar <shridharsapkal1996@gmail.com>
+Date:   Thu Jun 11 23:06:33 2026 +0530
+
+    Merge branch 'main' into frature/r7-create-job-api
+
+[33mcommit 99f40d8dc23e1ceeffc6d84b30c047ca473ea1ee[m
+Author: Shridhar <shridharsapkal1996@gmail.c
