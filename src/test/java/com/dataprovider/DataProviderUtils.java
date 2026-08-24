@@ -8,55 +8,50 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 import com.api.request.model.CreateJobPayload;
+import com.api.request.model.UserCredentials;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
 import com.api.utils.FakerDataGenerator;
+import com.api.utils.JsonReaderUtil;
 import com.dataprovider.api.bean.CreateJobBean;
 import com.dataprovider.api.bean.UserBean;
 import com.opencsv.exceptions.CsvException;
 
 public class DataProviderUtils {
 
-	@DataProvider(name = "CreateJobAPIDataProvider", parallel = true)
-	public static Iterator<UserBean> loginAPIDataProvider() throws IOException, CsvException {
-		return CSVReaderUtil.loadCSV("testData/LoginCreds.csv", UserBean.class);
+    // ✅ Login API DataProvider (reads CSV of user credentials)
+    @DataProvider(name = "LoginAPIDataProvider", parallel = true)
+    public static Iterator<UserBean> loginAPIDataProvider() throws IOException, CsvException {
+        return CSVReaderUtil.loadCSV("testData/LoginCreds.csv", UserBean.class);
+    }
 
-	}
+    // ✅ Create Job API DataProvider (reads CSV and maps beans to payloads)
+    @DataProvider(name = "CreateJobAPIDataProvider", parallel = true)
+    public static Iterator<CreateJobPayload> createJobDataProvider() {
+        Iterator<CreateJobBean> createJobBeanIterator =
+                CSVReaderUtil.loadCSV("testData/CreateJobData.csv", CreateJobBean.class);
 
-	// Data provider needs to return somthing
-	// []
-	// [] []
-	// Iterator<>
+        List<CreateJobPayload> payloadList = new ArrayList<>();
+        while (createJobBeanIterator.hasNext()) {
+            CreateJobBean tempBean = createJobBeanIterator.next();
+            CreateJobPayload tempPayload = CreateJobBeanMapper.mapper(tempBean);
+            payloadList.add(tempPayload);
+        }
+        return payloadList.iterator();
+    }
 
-	@DataProvider(name = "CreateJobAPIDataProvider", parallel = true)
-	public static Iterator<CreateJobPayload> createJobDataProvider() {
+    // ✅ Faker-based Create Job DataProvider (generates fake payloads)
+    @DataProvider(name = "CreateJobAPIFakerProvider", parallel = true)
+    public static Iterator<CreateJobPayload> createJobFakeDataProvider() {
+        String fakerCount = System.getProperty("fakerCount", "5");
+        int fakerCountInt = Integer.parseInt(fakerCount);
 
-		Iterator<CreateJobBean> createJobBeanIterator = CSVReaderUtil.loadCSV("testData/CreateJobData.csv",
-				CreateJobBean.class);
+        return FakerDataGenerator.generateFakeCreateJobData(fakerCountInt);
+    }
 
-		List<CreateJobPayload> payloadlist = new ArrayList<CreateJobPayload>();
-		CreateJobBean tempBean;
-		CreateJobPayload tempPayload;
-
-		while (createJobBeanIterator.hasNext()) {
-			tempBean = createJobBeanIterator.next();
-			tempPayload = CreateJobBeanMapper.mapper(tempBean);
-			payloadlist.add(tempPayload);
-
-		}
-		return payloadlist.iterator();
-	}
-
-	@DataProvider(name = "CreateJobAPIFakerProvider", parallel = true)
-	public static Iterator<CreateJobPayload> createJobFakeDataProvider() {
-
-		String fakerCount = System.getProperty("fakerCount", "5");
-
-		int fakerCountInt = Integer.parseInt(fakerCount);
-
-		Iterator<CreateJobPayload> payloadIterator = FakerDataGenerator.generateFakeCreateJobData(5);
-
-		return payloadIterator;
-
-	}
+    // ✅ Login API JSON DataProvider (reads JSON file into UserCredentials)
+    @DataProvider(name = "LoginAPIJsonDataProvider", parallel = true)
+    public static Iterator<UserCredentials> loginAPIJsonDataProvider() {
+        return JsonReaderUtil.loadJSON("testData/demo.json", UserCredentials[].class);
+    }
 }

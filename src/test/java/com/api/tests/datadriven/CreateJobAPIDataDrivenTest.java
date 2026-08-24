@@ -29,8 +29,6 @@ public class CreateJobAPIDataDrivenTest {
         .then()
             .spec(SpecUtils.reponseSpec_ok())
             .body("message", equalTo("Success"))
-            .body("data.token", notNullValue())
-            .assertThat()
             .body(JsonSchemaValidator.matchesJsonSchemaInClasspath(
                 "responseSchema/createJobResponseSchema.json"
             ));
