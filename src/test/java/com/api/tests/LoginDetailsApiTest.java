@@ -1,4 +1,4 @@
- package com.api.tests;
+package com.api.tests;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.lessThan;
@@ -13,35 +13,20 @@ import com.api.utils.SpecUtils;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class LoginDetailsApiTest {
-	
-	@Test(description="Verify if the UserDetails API response is shown correctly",groups= {"api","smoke","regression"})
- public void LoginDetailsAPItest() throws IOException {
-		
-		
-		
-	
 
-		
-				
-		  given()
-	      .spec(SpecUtils.requestSpecWithAuth(Role.FD))
+	@Test(description = "Verify if the UserDetails API response is shown correctly", groups = { "api", "smoke",
+			"regression" }, dataProviderClass = com.dataprovider.DataProviderUtils.class, dataProvider = "loginAPIExcelDataProvider")
 
-	        
-	     .when()
-	     .get("userdetails")
-	     
-	     .then()
-	     .log().all()
-	     .spec(SpecUtils.reponseSpec_ok())
-	     .time(lessThan(10000L))
-	     .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/userdetails-schema.json"));
-	    
-	     
-	     
-		
+	
+	public void LoginDetailsAPItest() throws IOException {
+
+		given().spec(SpecUtils.requestSpecWithAuth(Role.FD))
+
+				.when().get("userdetails")
+
+				.then().log().all().spec(SpecUtils.reponseSpec_ok()).time(lessThan(10000L))
+				.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/userdetails-schema.json"));
+
 	}
 
-	
-
-	
 }
