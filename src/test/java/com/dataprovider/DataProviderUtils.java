@@ -59,7 +59,7 @@ public class DataProviderUtils {
     
  // ✅ Login API JSON DataProvider (reads JSON file into UserCredentials)
     @DataProvider(name = "loginAPIExcelDataProvider", parallel = true)
-    public static Iterator<UserCredentials> loginAPIJExelDataProvider() throws IOException {
-        return ExcelReaderUtil2.loadTestData();
+    public static Iterator<UserBean> loginAPIJExelDataProvider() throws IOException {
+        return ExcelReaderUtil2.loadTestData("LoginTestData",UserBean.class);
     }
 }
