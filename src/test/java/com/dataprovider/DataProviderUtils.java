@@ -11,6 +11,7 @@ import com.api.request.model.CreateJobPayload;
 import com.api.request.model.UserCredentials;
 import com.api.utils.CSVReaderUtil;
 import com.api.utils.CreateJobBeanMapper;
+import com.api.utils.ExcelReaderUtil2;
 import com.api.utils.FakerDataGenerator;
 import com.api.utils.JsonReaderUtil;
 import com.dataprovider.api.bean.CreateJobBean;
@@ -53,5 +54,12 @@ public class DataProviderUtils {
     @DataProvider(name = "LoginAPIJsonDataProvider", parallel = true)
     public static Iterator<UserCredentials> loginAPIJsonDataProvider() {
         return JsonReaderUtil.loadJSON("testData/demo.json", UserCredentials[].class);
+    }
+    
+    
+ // ✅ Login API JSON DataProvider (reads JSON file into UserCredentials)
+    @DataProvider(name = "loginAPIExcelDataProvider", parallel = true)
+    public static Iterator<UserBean> loginAPIJExelDataProvider() throws IOException {
+        return ExcelReaderUtil2.loadTestData("LoginTestData",UserBean.class);
     }
 }

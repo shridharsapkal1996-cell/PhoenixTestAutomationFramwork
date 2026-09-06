@@ -23,7 +23,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 public class loginAPIDataDrivenTest {
 
 	@Test(description = "Verify if the login api is worrking for user iamfd", groups = { "api", "regression",
-			"datadriven" }, dataProviderClass = com.dataprovider.DataProviderUtils.class, dataProvider = "LoginAPIDataProvider")
+			"datadriven" }, dataProviderClass = com.dataprovider.DataProviderUtils.class, dataProvider = "LoginAPIExcelDataProvider")
 
 	public void loginAPITest(UserBean userbean) throws IOException {
 

@@ -12,11 +12,12 @@ import com.api.utils.SpecUtils;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 
-public class LoginDetailsApiTest {
+public class LoginApiExcelDataProviderTest {
 
 	@Test(description = "Verify if the UserDetails API response is shown correctly", groups = { "api", "smoke",
 			"regression" }, dataProviderClass = com.dataprovider.DataProviderUtils.class, dataProvider = "loginAPIExcelDataProvider")
 
+	
 	
 	public void LoginDetailsAPItest() throws IOException {
 
