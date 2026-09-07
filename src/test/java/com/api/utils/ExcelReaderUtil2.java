@@ -13,6 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
     
 import com.api.request.model.UserCredentials;
+import com.dataprovider.api.bean.CreateJobBean;
 import com.dataprovider.api.bean.UserBean;
 import com.poiji.bind.Poiji;
 
@@ -21,7 +22,7 @@ public class ExcelReaderUtil2 {
     private ExcelReaderUtil2() {
     }
 
-    public static Iterator<UserBean> loadTestData(String sheetName, Class<UserBean> clazz) throws IOException {
+    public static Iterator<UserBean> loadTestData(String sheetName, Class<UserBean> class1) throws IOException {
         // APACHE POI OOXML LIB
         InputStream is = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("testData/PhoenixTestData.xlsx");
@@ -41,5 +42,18 @@ public class ExcelReaderUtil2 {
         
        
       
-    }
+   
+	
+	}
+
+	public static Iterator<CreateJobBean> loadTestData(String string, String string2, Class<CreateJobBean> class1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+
+
 }
