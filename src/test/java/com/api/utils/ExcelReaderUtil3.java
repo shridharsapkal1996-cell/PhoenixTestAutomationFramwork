@@ -9,7 +9,7 @@ import com.dataprovider.api.bean.CreateJobBean;
 
 public class ExcelReaderUtil3 {
     public static void main(String[] args) {
-    	Iterator<CreateJobBean> iterator = ExcelReaderUtil2.loadTestData(
+    	Iterator<CreateJobBean> iterator = ExcelReaderUtil.loadTestData(
     	        "testData/PhoenixTestData.xlsx",
     	        "CreateJobTestData",
     	        CreateJobBean.class);

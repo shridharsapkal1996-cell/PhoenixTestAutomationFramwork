@@ -3,50 +3,55 @@ package com.api.utils;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
+import java.util.Iterator;
+import java.util.List;
+
+
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+    
+
+import com.dataprovider.api.bean.CreateJobBean;
+import com.dataprovider.api.bean.UserBean;
+import com.poiji.bind.Poiji;
 
 public class ExcelReaderUtil {
+    
+    private ExcelReaderUtil() {
+    }
 
-	public static void main(String[] args) throws IOException {
-		// APACHE POI OOXML LIB
+    public static Iterator<UserBean> loadTestData(String sheetName, Class<UserBean> class1) throws IOException {
+        // APACHE POI OOXML LIB
+        InputStream is = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("testData/PhoenixTestData.xlsx");
 
-		InputStream is = Thread.currentThread().getContextClassLoader()
-				.getResourceAsStream("testData/PhoenixTestData.xlsx");
-		XSSFWorkbook myWorkBook = new XSSFWorkbook(is);
-		// Focus on the sheet
+        // Always close workbook later
+        XSSFWorkbook myWorkBook = new XSSFWorkbook(is);
 
-		XSSFSheet mySheet = myWorkBook.getSheet("loginTestData");
-		XSSFRow myRow ;
-		XSSFCell myCell ;
+        // Focus on the sheet
+        XSSFSheet mySheet = myWorkBook.getSheet("loginTestData");
+        
+        
+        List<UserBean> dataList= Poiji.fromExcel(mySheet, UserBean.class);
+		return dataList.iterator();
+        
+        
 
-		
-		
-		//This condition for the last index whatever 
-		int lastRowIndex=mySheet.getLastRowNum();
-		System.out.println(lastRowIndex);          
-		
-		
-		//this condition for the last index of col 
-		XSSFRow rowHeader=mySheet.getRow(0);
-		int lastIndexOfCol=rowHeader.getLastCellNum()-1; //Return the total number of cols
-		System.out.println(lastIndexOfCol);
-		
-		
-		for(int rowIndex=0; rowIndex<=lastRowIndex; rowIndex++) {
-			for(int colIndex=0; colIndex<=lastIndexOfCol; colIndex++) {
-				myRow=mySheet.getRow(rowIndex);
-				myCell=myRow.getCell(colIndex);
-				
-				System.out.print(myCell+" ");
-			}
-			System.out.println("");
-		}
-		 
-
+        
+       
+      
+   
+	
 	}
+
+	public static Iterator<CreateJobBean> loadTestData(String string, String string2, Class<CreateJobBean> class1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+
 
 }
