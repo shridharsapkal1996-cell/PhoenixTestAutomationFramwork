@@ -15,12 +15,8 @@ public record CreateJobPayload(
     Problems[] problems
 ) 
 
-
-
-
 {
    
-
 	@Override
     public String toString() {
         return "CreateJobPayload{" +
