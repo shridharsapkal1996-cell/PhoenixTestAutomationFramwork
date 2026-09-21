@@ -373,6 +373,7 @@ public CreateJobBean() {
 		this.problems__remark = problems__remark;
 	}
 	
+	 
 	
 
 	
