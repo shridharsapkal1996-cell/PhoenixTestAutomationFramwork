@@ -65,11 +65,18 @@ public class ConfigManager {
 
 	}
 
-	public static String getProperty(String key) {
-		// create the object of propertes class  //this wrapper method 
-		
-		return prop.getProperty(key);
+
+
+	public static String getProperty(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
+
+	
+
+
   
 	
 }
