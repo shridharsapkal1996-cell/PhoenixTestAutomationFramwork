@@ -13,10 +13,11 @@ public class DemoDaoRunner {
 		System.out.println(customerDBData);
 		System.out.println(customerDBData.getFirst_name());
 		System.out.println(customerDBData.getEmail_id());
-        System.out.println(customerDBData.getMobile_number());
-        Customer customer=new Customer("jatin","Shharma","7856764577"," ","shridharsapkal@gmail.com"," ");
-        System.out.println(customer.first_name());
-        Assert.assertEquals(customerDBData.getFirst_name(), customer.first_name());
+		System.out.println(customerDBData.getMobile_number());
+		Customer customer = new Customer("jatin", "Shharma", "7856764577", " ", "shridharsapkal@gmail.com", " ");
+		System.out.println(customer.first_name());
+		Assert.assertEquals(customerDBData.getFirst_name(), customer.first_name());
+
 	}
 
 }
