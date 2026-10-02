@@ -9,7 +9,7 @@ import com.database.model.CustomerDBModel;
 
 public class DemoDaoRunner {
 	public static void main(String[] args) throws SQLException {
-		CustomerDBModel customerDBData = CustomerDao.getCustomerInfo();
+		CustomerDBModel customerDBData = CustomerDao.getCustomerInfo(437107);
 		System.out.println(customerDBData);
 		System.out.println(customerDBData.getFirst_name());
 		System.out.println(customerDBData.getEmail_id());
