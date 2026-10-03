@@ -30,7 +30,7 @@ import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
-public class CreateJobAPIWithDBValidationTest {
+public class CreateJobAPIWithDBValidationTest2 {
 	private CreateJobPayload createJobPayload;
 	Customer customer ;
 	@BeforeMethod(description = "Creating createjob api request payload")
