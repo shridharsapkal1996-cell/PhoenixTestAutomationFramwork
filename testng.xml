@@ -10,6 +10,7 @@
       <class name="com.api.tests.LoginDetailsApiTest"/>
       <class name="com.api.tests.MasterApiTest"/>
       <class name="com.api.tests.CreateJobAPITest"/>
+      <class name="com.api.tests.CreateJobAPIWithDBValidationTest.java"/>
      
      
     </classes>
