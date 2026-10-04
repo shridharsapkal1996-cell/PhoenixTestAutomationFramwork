@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.api.utils.ConfigManager;
+import com.api.utils.EnvUtil;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -11,9 +12,9 @@ public class DatabaseManager {
 
 	HikariConfig hikariConfig = new HikariConfig();
 
-	private static final String DB_URL = ConfigManager.getProperty("DB_URL");
-	private static final String DB_USERNAME = ConfigManager.getProperty("DB_USERNAME");
-	private static final String DB_PASSWORD = ConfigManager.getProperty("DB_PASSWORD");
+	private static final String DB_URL = EnvUtil.getValue("DB_URL");
+	private static final String DB_USERNAME = EnvUtil.getValue("DB_USERNAME");
+	private static final String DB_PASSWORD = EnvUtil.getValue("DB_PASSWORD");
 	private static final int MAXIMUM_POOL_SIZE = Integer.parseInt(ConfigManager.getProperty("MAXIMUM_POOL_SIZE"));
 	private static final int MINIMUM_IDLE_COUNT = Integer.parseInt(ConfigManager.getProperty("MINIMUM_IDLE_COUNT"));
 	private static final int CONNECTION_TIMEOUT_IN_SECS = Integer
@@ -22,7 +23,7 @@ public class DatabaseManager {
 	private static final int MAX_LIFE_TIME_IN_MINS = Integer
 			.parseInt(ConfigManager.getProperty("MAX_LIFE_TIME_IN_MINS"));
 	private static final String HIKARI_CP_POOL_NAME = ConfigManager.getProperty("HIKARI_CP_POOL_NAME");
-	//private static final HikariConfig hikariConfig;
+	// private static final HikariConfig hikariConfig;
 	private volatile static HikariDataSource hikariDataSource;
 
 	private static Connection conn; // Any update that happens to this conn variable!
@@ -39,7 +40,7 @@ public class DatabaseManager {
 				if (hikariDataSource == null) { // ONLY and only for the first Connection Request
 					HikariConfig hikariConfig = new HikariConfig();
 					hikariConfig.setJdbcUrl(DB_URL);
-				//	hikariConfig.setDriverClassName(DB_DRIVER);
+					// hikariConfig.setDriverClassName(DB_DRIVER);
 					hikariConfig.setUsername(DB_USERNAME);
 					hikariConfig.setPassword(DB_PASSWORD);
 					hikariConfig.setMaximumPoolSize(MAXIMUM_POOL_SIZE);
