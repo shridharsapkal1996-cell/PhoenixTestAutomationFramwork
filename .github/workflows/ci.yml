@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  schedule: #Set the CRON for Midnight IST ----->convert in UTC time 
+  schedule: # Set the CRON for Midnight IST -> convert in UTC time
     - cron: "30 18 * * *"
     - cron: "30 15 * * *"
 
@@ -16,7 +16,7 @@ on:
         description: "Environment"
         type: choice
         options: [qa, uat, dev]
-        default: qa 
+        default: qa
         required: true
       suiteXmlFile:
         description: "TestNG Xml File"
@@ -39,22 +39,21 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      -name: Creating the .env file
-       run: |
-            echo "DB_URL=${{ secrets.DB_URL }}" >> .env
-            echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
-            echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-            
+      - name: Creating the .env file
+        run: |
+          echo "DB_URL=${{ secrets.DB_URL }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
       - name: Default Values for Execution
         id: default
         run: |
           echo "suiteXmlFile=${{ github.event.inputs.suiteXmlFile || 'testng.xml' }}" >> $GITHUB_OUTPUT
           echo "env=${{ github.event.inputs.env || 'qa' }}" >> $GITHUB_OUTPUT
-          
+
       - name: Execute Test automation framework
         run: mvn clean test -DsuiteXmlFile="${{ steps.default.outputs.suiteXmlFile }}" -Denv="${{ steps.default.outputs.env }}"
 
-      - name: Upload a Build Artifact 
+      - name: Upload a Build Artifact
         if: always()
         uses: actions/upload-artifact@v4
