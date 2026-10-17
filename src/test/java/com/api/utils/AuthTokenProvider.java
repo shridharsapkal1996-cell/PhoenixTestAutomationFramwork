@@ -4,13 +4,17 @@ import static io.restassured.RestAssured.*;
 
 import static org.hamcrest.Matchers.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.api.constant.Role;
 import com.api.request.model.UserCredentials;
 
+import groovyjarjarantlr4.runtime.Token;
 import io.restassured.http.ContentType;
 
 public class AuthTokenProvider {
-	
+	private static Map<Role, String> tokenCode=new HashMap<Role,String>();
 
 	private AuthTokenProvider(){
 		
@@ -20,6 +24,7 @@ public class AuthTokenProvider {
 	
 	public static String getToken(Role role) {
 		
+	 
 		
 		//I want to make the request for the login api and we want to extract the token and 
 		// Print it on console
